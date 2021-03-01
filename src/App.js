@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component} from 'react';
+import Muffins from './Muffins';
 
-function App() {
-  return (
+class App extends Component {
+  state = {
+    muffins : [
+      {price: 25, size: 'middle', id: 1},
+      {price: 20, size: 'big', id: 2},
+      {price: 35, size: 'small', id: 3}
+    ]
+  }
+  render() {
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My first React app!</h1>
+      <p>Welcome :)</p>
+      <Muffins muffins = {this.state.muffins}/>
     </div>
   );
+}
 }
 
 export default App;
