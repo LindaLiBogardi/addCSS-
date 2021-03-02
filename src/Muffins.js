@@ -5,6 +5,7 @@ const Muffins =({muffins}) =>  {
     if (muffin.price>25){      
         return (
             <div className="muffin" key={muffin.id}>
+              <div>Namen: {muffin.name}</div>
               <div>Price: {muffin.price}</div>
               <div>Size: {muffin.size} </div>
             </div>

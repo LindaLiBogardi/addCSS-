@@ -13,7 +13,7 @@ class AddMuffin extends Component {
     }
     handelSubmit = (e) =>{
         e.preventDefault();
-        console.log(this.state);
+        this.props.addMuffin(this.state);
     }
     render(){
         return (

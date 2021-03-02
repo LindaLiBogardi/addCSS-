@@ -5,11 +5,18 @@ import AddMuffin from './AddMuffin';
 class App extends Component {
   state = {
     muffins : [
-      {price: 25, size: 'middle', id: 1},
-      {price: 20, size: 'big', id: 2},
-      {price: 35, size: 'small', id: 3},
-      {price: 30, size: 'middle', id: 3}
+      {name: 'saffran', price: 25, size: 'middle', id: 1},
+      {name: 'vanilj', price: 20, size: 'big', id: 2},
+      {name: 'banana', price: 35, size: 'small', id: 3},
+      {name: 'apple', price: 30, size: 'middle', id: 3}
     ]
+  }
+  addMuffin =(muffin)=> {
+    muffin.id=Math.random();
+    let muffins = [...this.state.muffins, muffin];
+    this.setState({
+      muffins:muffins
+    })
   }
   render() {
     return (
@@ -17,7 +24,7 @@ class App extends Component {
       <h1>My first React app!</h1>
       <p>Welcome :)</p>
       <Muffins muffins = {this.state.muffins}/>
-      <AddMuffin />
+      <AddMuffin addMuffin={this.addMuffin}/>
     </div>
   );
 }
