@@ -6,7 +6,8 @@ class App extends Component {
     muffins : [
       {price: 25, size: 'middle', id: 1},
       {price: 20, size: 'big', id: 2},
-      {price: 35, size: 'small', id: 3}
+      {price: 35, size: 'small', id: 3},
+      {price: 30, size: 'middle', id: 3}
     ]
   }
   render() {

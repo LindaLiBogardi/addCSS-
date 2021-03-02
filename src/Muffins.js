@@ -1,22 +1,25 @@
-import React, { Component} from 'react';
+import React from 'react';
 
-class Muffins extends Component {
-    render (){
-        const { muffins } = this.props;
-        const muffinList=muffins.map(muffin => {        
+const Muffins =({muffins}) =>  {
+    const muffinlist = muffins.map(muffin => {
+    if (muffin.price>25){      
         return (
             <div className="muffin" key={muffin.id}>
               <div>Price: {muffin.price}</div>
               <div>Size: {muffin.size} </div>
             </div>
         )
-    })
+    } else {
+        return null
+    }
+})
+    
     return(
         <div className="muffin-list">
-            {muffinList}
+            {muffinlist}
         </div>
     )
-  }
 }
+
 
 export default Muffins
