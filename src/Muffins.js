@@ -1,4 +1,5 @@
 import React from 'react';
+import './Muffins.css'
 
 const Muffins =({muffins, deleteMuffin}) =>  {
     const muffinlist = muffins.map(muffin => {
