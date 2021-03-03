@@ -8,7 +8,7 @@ class App extends Component {
       {name: 'saffran', price: 25, size: 'middle', id: 1},
       {name: 'vanilj', price: 20, size: 'big', id: 2},
       {name: 'banana', price: 35, size: 'small', id: 3},
-      {name: 'apple', price: 30, size: 'middle', id: 3}
+      {name: 'apple', price: 30, size: 'middle', id: 4}
     ]
   }
   addMuffin =(muffin)=> {
@@ -18,12 +18,20 @@ class App extends Component {
       muffins:muffins
     })
   }
+  deleteMuffin =(id) => {
+    let muffins=this.state.muffins.filter(muffin=>{
+      return muffin.id !== id
+    });
+    this.setState({
+      muffins:muffins
+    })
+  }
   render() {
     return (
     <div className="App">
       <h1>My first React app!</h1>
       <p>Welcome :)</p>
-      <Muffins muffins = {this.state.muffins}/>
+      <Muffins deleteMuffin={this.deleteMuffin} muffins= {this.state.muffins}/>
       <AddMuffin addMuffin={this.addMuffin}/>
     </div>
   );

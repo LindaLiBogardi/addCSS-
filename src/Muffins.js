@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Muffins =({muffins}) =>  {
+const Muffins =({muffins, deleteMuffin}) =>  {
     const muffinlist = muffins.map(muffin => {
     if (muffin.price>25){      
         return (
@@ -8,6 +8,7 @@ const Muffins =({muffins}) =>  {
               <div>Namen: {muffin.name}</div>
               <div>Price: {muffin.price}</div>
               <div>Size: {muffin.size} </div>
+              <button onClick={() => {deleteMuffin(muffin.id)}}>Delete muffin</button>
             </div>
         )
     } else {
